@@ -24,5 +24,8 @@ class Monster(BaseModel):
         if isinstance(value, str):
             if value == "Legendary":
                 return True
-            return False
-        raise ValueError(f"Unable to convert {value} to bool")
+            elif value == "":
+                return False
+            else:
+                raise ValueError(f"Unable to convert {value} to bool")
+        return value
