@@ -19,6 +19,7 @@ class Monster(BaseModel):
     _wis: int
     _cha: int
 
+    # TODO: probs overkill, we'll likely never re-upload these
     @validator("legendary", pre=True)
     def legendary_bool(cls, value) -> bool:
         if isinstance(value, str):
